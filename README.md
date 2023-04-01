@@ -1,6 +1,6 @@
 # open-liberty-email-sender
 An example of using open liberty in a docker container to send emails
-First, go to the `/home/dominic/IdeaProjects/email-example/src/main/java/com/email/rest/RestApplication.java` file and fill in the respective values that I left as placeholders
+First, go to the `email-example/src/main/java/com/email/rest/RestApplication.java` file and fill in the respective values that I left as placeholders
 You can tell if they are placeholder values if they are surrounded by <> characters.
 
 The sender email needs to be a GMail account. To send emails, you need to fill in the `<sender email>` placeholder 
