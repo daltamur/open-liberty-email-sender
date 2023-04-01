@@ -14,7 +14,7 @@ device as "Other". You can name the device whatever you want. After doing so, a 
 
 ![img.png](img.png)
 
-The code that is generate will go in the `<App password>` place holder.
+The code that is generated will go in the `<App password>` place holder.
 
 To run this application, run `docker build . -t email-sender && docker run -d -p 9080:9080 -p 465:465 email-sender`
 Once the application is up and running, send a post request to the route `http://localhost:9080/email-example/api/send`
