@@ -4,8 +4,11 @@ import jakarta.mail.*;
 import jakarta.mail.internet.AddressException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
+import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
+import jakarta.ws.rs.Produces;
+import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.io.UnsupportedEncodingException;
@@ -28,7 +31,7 @@ public class Resource {
 
             protected PasswordAuthentication getPasswordAuthentication() {
 
-                return new PasswordAuthentication("<receiver email>", "<app password>");
+                return new PasswordAuthentication("<sender email>", "<App password>");
 
             }
 
@@ -40,7 +43,7 @@ public class Resource {
             Message msg = new MimeMessage(session);
             msg.setFrom(new InternetAddress(from, "NoReply"));
             msg.addRecipient(Message.RecipientType.TO,
-                    new InternetAddress(to));
+                    new InternetAddress(to, "<Receiver's name (this can be anything you want)>"));
             msg.setSubject("Here's an example");
             msg.setText(msgBody);
             Transport.send(msg);
