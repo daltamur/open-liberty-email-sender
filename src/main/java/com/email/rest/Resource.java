@@ -4,11 +4,8 @@ import jakarta.mail.*;
 import jakarta.mail.internet.AddressException;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
-import jakarta.ws.rs.GET;
 import jakarta.ws.rs.POST;
 import jakarta.ws.rs.Path;
-import jakarta.ws.rs.Produces;
-import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.io.UnsupportedEncodingException;
@@ -19,8 +16,8 @@ public class Resource {
 
     @POST
     public Response getProperties() throws MessagingException, UnsupportedEncodingException {
-        String to="<receiver email>";
-        String from="<sender email>";
+        String to = "<receiver email>";
+        String from = "<sender email>";
         Properties prop = new Properties();
         prop.put("mail.smtp.host", "smtp.gmail.com");
         prop.put("mail.smtp.port", "465");
